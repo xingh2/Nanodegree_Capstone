@@ -1,0 +1,37 @@
+$def with (result)
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="static/css/style.css">
+		<title>Image Description</title>
+	</head>
+	<body>
+		<center><br />
+		<form method="POST" enctype="multipart/form-data" action="">
+		Upload image:
+		<input type="file" name="myfile"/><br /><br />
+		<input type="submit" class="btn"/>
+		</form>
+		</center>
+		<br/><br/>
+		<div>
+		<div id="sidebar">
+			<center><img src="static/upload/$result.filename"  alt="" width="80%" border="3">
+			<br />
+			<font size="5">Description: <strong>$result.label</strong></font>
+		</center>
+		</div>
+		<div id="content-wrap">
+			<font size="5">Similar images:</font><br />
+			<img src="static/images/$result.neighbors[0]"  alt="" width="30%" border="1">&nbsp;&nbsp;&nbsp;
+			<img src="static/images/$result.neighbors[1]"  alt="" width="30%" border="1">&nbsp;&nbsp;&nbsp;
+			<img src="static/images/$result.neighbors[2]"  alt="" width="30%" border="1">
+			<br /><br />
+			<img src="static/images/$result.neighbors[3]"  alt="" width="30%" border="1">&nbsp;&nbsp;&nbsp;
+			<img src="static/images/$result.neighbors[4]"  alt="" width="30%" border="1">&nbsp;&nbsp;&nbsp;
+			<img src="static/images/$result.neighbors[5]"  alt="" width="30%" border="1">
+		</div>
+		</div>
+	</body>
+</html>
